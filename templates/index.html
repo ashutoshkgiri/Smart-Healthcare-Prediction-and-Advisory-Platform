@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disease Prediction & Medical Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('static/bgCover.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.15);
+            background-blend-mode: overlay;
+            font-family: "Segoe UI", Roboto, sans-serif;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #10045F, #3424A1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .logo h5 {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
+            color: #fff;
+        }
+        .myimg {
+            width: 45px;
+            height: 45px;
+            margin-right: 8px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 700px;
+        }
+        .title-symptoms {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .btn {
+            background-color: #10045F;
+            border-radius: 10px;
+            font-size: 1rem;
+            padding: 12px;
+            width: 50%;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #3424A1;
+            transform: scale(1.03);
+        }
+        .message-text {
+            color: red;
+            font-weight: 500;
+        }
+        table {
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th {
+            width: 25%;
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            backdrop-filter: blur(6px);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <div class="logo d-flex align-items-center">
+            <img class="myimg" src="static/img.png" alt="Logo">
+            <h5>Smart Healthcare Prediction and Advisory Platform</h5>
+        </div>
+        <a class="navbar-brand ms-auto" href="/" id="resetButton">Reset</a>
+    </div>
+</nav>
+
+
+<div class="container my-5">
+    <form action="/predict" method="post">
+        <label for="symptoms" class="title-symptoms">Enter your symptoms:</label>
+        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="E.g., headache, mild fever, acidity..." required>
+        {% if message %}
+        <p class="message-text mt-3">{{ message }}</p>
+        {% endif %}
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </div>
+    </form>
+</div>
+
+{% if predicted_disease %}
+
+<div class="container my-4">
+    <h4 class="text-center mb-4">Predicted Results</h4>
+    <h6 class="text-center">Showing predictions for <strong>{{symptoms}}</strong></h6>
+    <table class="table table-bordered mt-3">
+        <tbody>
+            <tr>
+                <th>Disease</th>
+                <td>{{ predicted_disease }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ dis_des }}</td>
+            </tr>
+            <tr>
+                <th>Precautions</th>
+                <td>
+                    <ul>{% for i in my_precautions %}<li>{{ i }}</li>{% endfor %}</ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Medications</th>
+                <td>
+                    <ul>{% for i in medications %}<li>{{ i }}</li>{% endfor %}</ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Workout</th>
+                <td>
+                    <ul>{% for i in workout %}<li>{{ i }}</li>{% endfor %}</ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Diet</th>
+                <td>
+                    <ul>{% for i in my_diet %}<li>{{ i }}</li>{% endfor %}</ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+
+<div class="footer">
+    <i>Machine Learning Project by: Ashutosh kumar giri,Samrath</i>
+</div>
+
+</body>
+</html>
