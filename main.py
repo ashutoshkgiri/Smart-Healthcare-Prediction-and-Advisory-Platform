@@ -115,7 +115,7 @@ def home():
 
 
 
-# about view function and path
+
 @app.route('/')
 def index():
     return render_template('index.html')
