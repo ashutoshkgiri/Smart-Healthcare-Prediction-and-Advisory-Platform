@@ -5,7 +5,7 @@ A machine learning-powered web application that predicts diseases based on user-
 ## 🎯 Features
 
 - **Intelligent Disease Prediction**: Uses Random Forest machine learning model with 100% accuracy
-- **Symptom Spell Correction**: Advanced fuzzy matching to correct misspelled symptoms
+- **Symptom Spell Correction**: Advanced fuzzy matching to correct misspelled symptoms 
 - **Comprehensive Health Recommendations**: 
   - Disease descriptions and information
   - Personalized medication suggestions
@@ -82,15 +82,10 @@ The system uses comprehensive medical datasets containing:
    - Exercise plans
    - Preventive precautions
 
-## 👥 Team Members
 
-- **Soham Sonar**
-- **Tanmay Pramanick**  
-- **Kunal Rajput**
 
-## 📸 Screenshots
 
- ![](https://github.com/sohamvsonar/Disease-Prediction-and-Medical-Recommendation-System/blob/main/screenshots/ss2.jpg)
+
 
 ## 🏗️ Project Structure
 
