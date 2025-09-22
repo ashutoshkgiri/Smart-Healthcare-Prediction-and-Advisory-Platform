@@ -118,8 +118,4 @@ Disease-Prediction-and-Medical-Recommendation-System/
 ```
 
 
-## ⚠️ Disclaimer
 
-This system is for educational and informational purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare professionals for medical concerns.
-
-=======
