@@ -40,7 +40,7 @@ The system uses comprehensive medical datasets containing:
 - `precautions_df.csv`: Preventive measures and precautions
 - `Symptom-severity.csv`: Symptom severity classifications
 
-## 🔧 Installation & Setup
+
 
 ### Prerequisites
 - Python 3.7+
@@ -110,7 +110,6 @@ Disease-Prediction-and-Medical-Recommendation-System/
 ├── screenshots/                # Application screenshots
 │   ├── ss1.jpg
 │   ├── ss2.jpg
-│   └── ss3.jpg
 ├── main.py                     # Flask web application
 ├── disease_prediction_system.ipynb  # Model training notebook
 ├── requirements.txt            # Python dependencies
