@@ -50,7 +50,7 @@ def information(predicted_dis):
     return disease_desciption, disease_precautions, disease_medications, disease_diet, disease_workout
 
 
-# This is the function that passes the user input symptoms to our Model
+# This is the function that passes the user input symptoms to our Model and perform machine learning
 def predicted_value(patient_symptoms):
     i_vector = np.zeros(len(symptoms_list_processed))
     for i in patient_symptoms:
